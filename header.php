@@ -9,8 +9,8 @@
         <div class="container">
         <div class="col-md-3 offer">
             <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                <img height="50px" src="img/logo.png" alt="Obaju logo" class="hidden-xs">
-                <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                <!-- <img height="50px" src="img/logo.png" alt="Obaju logo" class="hidden-xs">
+                <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span> -->
             </a>
         </div>
             <div class="col-md-3 offer" data-animate="fadeInDown">
@@ -28,7 +28,7 @@
                         ';
                     } else {
                         echo '
-                        <li><a href="register.php">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
                         <li><a href="register.php">Register</a></li>
                         ';
                     }
@@ -47,7 +47,6 @@
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
         <div class="container">
             <div class="navbar-header">
-
                 <!-- <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
                    <img height="50px" src="img/logo.png" alt="Obaju logo" class="hidden-xs">
                     <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
@@ -69,12 +68,31 @@
                 </div>
             </div>
             <!--/.navbar-header -->
-
             <div class="navbar-collapse collapse" id="navigation">
-
                 <ul class="nav navbar-nav navbar-left">
+                <li>
+                <a href="index.php" class="act">Home</a>
+            </li>
+                            <!-- Mega Menu -->
+                            <li>
+                            <a class="nav-link scrollto active" href="#services">services</a>
+                        </li>
+                            <li>
+                            <a class="nav-link scrollto active" href="#about">About Us</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto active" href="#news">News</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Contact us</a>
+                        </li>
+                        <li>
+                            <a class="nav-link scrollto active" href="products.php">products</a>
+                        </li>
+                <li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORY/PRODUCTS<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
                 <?php
-	            $db = mysqli_connect('localhost','root','','shop')
+	            $db = mysqli_connect('localhost','root','','biddingdb')
 	            or die('Error connecting to MySQL server.'); 
 
 	            $query1 = "SELECT * FROM category ";
@@ -89,8 +107,9 @@
                     <?php echo $categories["Category"];?></a>
                     </li>
                    <?php $categories = $result1->fetch_assoc();} ?>
+                <!-- </ul> -->
                 </ul>
-
+                            </li>
             </div>
             <!--/.nav-collapse -->
 

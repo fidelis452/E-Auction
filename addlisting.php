@@ -10,10 +10,12 @@ session_start();
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obaju e-commerce template">
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
-        E-Auction
+        Bid Now : Auction Marketplace
     </title>
 
     <meta name="keywords" content="">
@@ -45,7 +47,7 @@ session_start();
 
 <body>
 
-   <?php $db = mysqli_connect('localhost','root','','shop')
+   <?php $db = mysqli_connect('localhost','root','','biddingdb')
         or die('Error connecting to MySQL server.'); 
 
         $query1 = "SELECT * FROM category ";

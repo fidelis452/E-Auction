@@ -11,7 +11,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Bid Now : Auction Marketplace
+        BID NOW : Auction Marketplace
     </title>
 
     <meta name="keywords" content="">
@@ -41,7 +41,7 @@
 
 <body>
 
- 	<?php $db = mysqli_connect('localhost','root','','shop')
+ 	<?php $db = mysqli_connect('localhost','root','','biddingdb')
 		or die('Error connecting to MySQL server.'); 
 
 		$query1 = "SELECT * FROM category ";
@@ -190,7 +190,7 @@
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.php?ItemNo=<?php echo $row['ItemID'] ?>"><?php echo $row['ItemName']?></a></h3>
-                                    <p class="price">Rs : <?php echo number_format($row['CurrentPrice'],2)?></p>
+                                    <p class="price">KSH : <?php echo number_format($row['CurrentPrice'],2)?></p>
 									
 
                                 </div>
@@ -265,7 +265,7 @@
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.php?ItemNo=<?php echo $row5['ItemID'] ?>"><?php echo $row5['ItemName']?></a></h3>
-                                    <p class="price">Rs : <?php echo number_format($row5['CurrentPrice'],2)?></p>
+                                    <p class="price">KSh : <?php echo number_format($row5['CurrentPrice'],2)?></p>
 									
 
                                 </div>

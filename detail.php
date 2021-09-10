@@ -8,10 +8,12 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obaju e-commerce template">
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
-        E-auction
+        E-Auction
     </title>
 
     <meta name="keywords" content="">
@@ -44,13 +46,13 @@
 
 </head>
 
-<body  onload="countdown(year,month,day,hour,minute)">
+<body  onload="countdown(year,month,day,hour,minute)" >
 
     <?php include 'header.php';?>
 
 
     <!-- *** NAVBAR END *** -->
-    <?php $db = mysqli_connect('localhost','root','','shop')
+    <?php $db = mysqli_connect('localhost','root','','biddingdb')
           or die('Error connecting to MySQL server.'); 
 
           
@@ -111,19 +113,7 @@
 
                         </div>
                     </div>
-
-                    
-
-                   
                     <!-- *** MENUS AND FILTERS END *** -->
-                    
-
-
-                    <div class="banner">
-                        <a href="#">
-                            <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-                        </a>
-                    </div>
                 </div>
 
                 <div class="col-md-9">
@@ -154,14 +144,14 @@
                                
                                 </p>
 
-                                <p class="price">Current Bid : Rs <?php echo  number_format($row['CurrentPrice'],2);?></p>
+                                <p class="price">Current Bid : Ksh <?php echo  number_format($row['CurrentPrice'],2);?></p>
 
                                  <form action="" method="post" align="center">
 									           
 									    <input type="text" name="bidValue" /><br><br>
 
 
-									<p align="center">Enter a value greater than Rs <?php echo number_format($leastValue,2);?> </p>
+									<p align="center">Enter a value greater than Ksh <?php echo number_format($leastValue,2);?> </p>
 
 									    <input class="btn btn-primary" type="submit" align="center" value="Bid Now"><br/><br>
 									</form>
@@ -171,7 +161,7 @@
 									<?php 
 										function updater($value,$id,$leastValue,$ExpectedValue,$userID){
 										    // Create connection
-										     $db = mysqli_connect('localhost','root','','shop')
+										     $db = mysqli_connect('localhost','root','','biddingdb')
 											or die('Error connecting to MySQL server.'); 
 											
 										   
@@ -264,7 +254,7 @@
 
 
                                 <p class="text-center buttons">
-                                    <a href="" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy now for Rs    <?php echo number_format($row['ExpectedPrice'],2);?> </a> 
+                                    <a href="" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy now for Ksh    <?php echo number_format($row['ExpectedPrice'],2);?> </a> 
                                     
                                 </p>
 
@@ -299,9 +289,12 @@
 					?>
 
 				
+<div>
 
+                            <!-- /.product -->
+                        </div>
                     <div class="row same-height-row">
-                        <div class="col-md-3 col-sm-6">
+                        <!-- <div class="col-md-3 col-sm-6"> -->
                             <div class="box same-height">
                                 <h3>You may also like these products</h3>
                             </div>
@@ -312,7 +305,7 @@
 
 										
 						?>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-3 col-sm-12">
                             <div class="product same-height">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -326,6 +319,7 @@
                                                 <img src="<?php echo $row2['PhotosID'];?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <a href="detail.php?ItemNo=<?php echo $row2['ItemID'] ?>" class="invisible">
@@ -333,7 +327,7 @@
                                 </a>
                                 <div class="text">
                                     <h3><?php echo $row2['ItemName'] ?></h3>
-                                    <p class="price">Rs : <?php echo number_format($row2['CurrentPrice'],2);?></p>
+                                    <p class="price">Ksh : <?php echo number_format($row2['CurrentPrice'],2);?></p>
                                 </div>
                             </div>
                             <!-- /.product -->

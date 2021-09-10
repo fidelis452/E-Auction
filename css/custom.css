@@ -1,4 +1,6 @@
-
+body {
+    background-image: url(/img/main-slider3.jpg);
+}
 .numbers {
     padding: 0px;
     width: 45px;

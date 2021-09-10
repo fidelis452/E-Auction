@@ -1,9 +1,12 @@
-<?php 
-session_start(); 
+<?php
 
-if(isset($_SESSION['userid'])){
+session_start();
+
+
+if (isset($_SESSION['userid'])) {
     header('Location: index.php');
-}   
+}
+
 
 ?>
 
@@ -24,7 +27,7 @@ if(isset($_SESSION['userid'])){
 
     <meta name="keywords" content="">
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'> -->
 
     <!-- styles -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -32,94 +35,123 @@ if(isset($_SESSION['userid'])){
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- theme stylesheet -->
     <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
     <link href="css/custom.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/reg.css">
     <script src="js/respond.min.js"></script>
 
-    <link rel="shortcut icon" href="favicon.png">
 
+    <link rel="shortcut icon" href="favicon.png">
 
 
 </head>
 
 <body>
 
-    <?php include 'header.php';?>
+    <?php include 'header.php'; ?>
 
 
     <div id="all">
 
         <div id="content">
             <div class="container">
-
-                <div class="col-md-12">
-
-                    <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
-                        </li>
-                        <li>New account / Sign in</li>
-                    </ul>
-
-                </div>
-
-                <div class="col-md-6">
+            <div class="col-md-4">
+</div>
+                <div class="col-md-8">
                     <div class="box">
                         <h1>New account</h1>
 
-                        <p class="lead">Not our registered customer yet?</p>
-                        <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
-
+                        <!-- <p class="lead">Already a user ? <a href="login.php">LOGIN</a></p> -->
                         <hr>
                         <?php
-                        if(isset($_GET['err']) && $_GET['err'] == 2) {
-                            echo '
+if (isset($_GET['err']) && $_GET['err'] == 2) {
+    echo '
                             <div class="alert alert-danger">
                                 <strong>Error!</strong> Username you entered already exists.
                             </div>
                             ';
-                        }
+}
 
-                        if(isset($_GET['success'])) {
-                            echo '
+if (isset($_GET['success'])) {
+    echo '
                             <div class="alert alert-success">
                                 <strong>Success!</strong> Your account was successfully created. Please log in to continue.
                             </div>
                             ';
-                        }
-                        ?>
+}
+
+?>
 
                         <form action="process_register.php" method="post">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fname">Select Image</label>
+                                <input type="file" name="image" class="mx-auto rounded-circle" style="display: circle;" id="image" Required>
+                            </div>
+                            <div class="form-group">
+                            <label for="">Who are you?</label>
+                                <select name="u_title" class="form-control" Required>
+                                    <option value="">--Select User--</option>
+                                    <option value="seller">Seller</option>
+                                    <option value="bidder">Bidder</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
                             <div class="form-group">
                                 <label for="fname">First Name</label>
-                                <input type="text" class="form-control" id="fname" name="fname">
+                                <input type="text" class="form-control" id="fname" name="fname" Required>
                             </div>
                             <div class="form-group">
                                 <label for="lname">Last Name</label>
-                                <input type="text" class="form-control" id="lname" name="lname">
+                                <input type="text" class="form-control" id="lname" name="lname" Required>
                             </div>
+                            <div class="form-group" >
+                                <!-- <label for="gender">Gender:     </label>
+                                <input type="radio"  id="male" name="female" Required>Male      
+                                <input type="radio"  id="female" name="female" Required>Female -->
+                                
+                                <!-- <input type="text" name="name" class="form-control"><br><br> -->
+
+                                Gender :-
+
+                                <input type="radio" name="gender" value="Male">Male 
+
+                                <input type="radio" name="gender" value="Female">Female 
+                            </div>
+                    </div>
+                    <div class="col-md-6">
                             <div class="form-group">
                                 <label for="addr">Address</label>
-                                <input type="text" class="form-control" id="addr" name="addr">
+                                <input type="text" class="form-control" id="addr" name="addr" Required>
                             </div>
                             <div class="form-group">
-                                <label for="cno">Contact Number</label>
-                                <input type="text" class="form-control" id="cno" name="cno">
+                                <label for="cno"> Number</label>
+                                <input type="text" class="form-control" id="cno" name="cno" Required>
                             </div>
                             <div class="form-group">
-                                <label for="username">Username</label>
+                                <label for="idno">National ID</label>
+                                <input type="text" class="form-control" id="idno" name="idno" Required>
+                            </div>
+                           <div class="form-group">
+                                <label for="username">Email Address</label>
                                 <input type="text" class="form-control" id="username" name="username">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" id="password" name="password">
                             </div>
+                            <!-- <div class="form-group">
+                                <label for="password">Confirm Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                            </div> -->
+                    </div>
                             <div class="text-center">
+                            <p class="lead">Already a user ? <a href="login.php">LOGIN</a></p>
                                 <button type="submit" name="register" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
                             </div>
                         </form>
@@ -127,30 +159,21 @@ if(isset($_SESSION['userid'])){
                         
                     </div>
                 </div>
-
-                <div class="col-md-6">
+                
+                    
+                <!-- <div class="col-md-6">
                     <div class="box">
                         <h1>Login</h1>
 
                         <p class="lead">Already our customer?</p>
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
-                            mi vitae est. Mauris placerat eleifend leo.</p>
 
                         <hr>
 
-                        <?php 
-                        if(isset($_GET['err']) && $_GET['err'] == 1) {
-                            echo '
-                            <div class="alert alert-danger">
-                                <strong>Error!</strong> You have entered an invalid username or password.
-                            </div>
-                            ';
-                        }
-                        ?>
+                        
                         <form action="process_login.php" method="post">
-                            <div class="form-group">
-                                <label for="email">Username</label>
-                                <input type="text" class="form-control" id="email" name="username">
+                        <div class="form-group">
+                                <label for="username">Email Address</label>
+                                <input type="text" class="form-control" id="username" name="username">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -164,14 +187,27 @@ if(isset($_SESSION['userid'])){
                 </div>
 
 
-            </div>
+            </div> -->
             <!-- /.container -->
         </div>
         <!-- /#content -->
-
+        <!-- <script>
+           function triggerClick(e) {
+  document.querySelector('#profileImage').click();
+}
+function displayImage(e) {
+  if (e.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e){
+      document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(e.files[0]);
+  }
+} -->
+</script>
 
         
-    <?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
 
     
 

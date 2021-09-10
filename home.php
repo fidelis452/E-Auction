@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Bid Now : Auction Marketplace
+        BID NOW : Auction Marketplace
     </title>
 
     <meta name="keywords" content="">
@@ -377,7 +377,7 @@
 
 <body>
 
- 	<?php $db = mysqli_connect('localhost','root','','shop')
+ 	<?php $db = mysqli_connect('localhost','root','','biddingdb')
 		or die('Error connecting to MySQL server.'); 
 
 		$query1 = "SELECT * FROM category ";

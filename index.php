@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Bid Now : Auction Marketplace
+        BID NOW : Auction Marketplace
     </title>
 
     <meta name="keywords" content="">
@@ -378,9 +378,9 @@
 
 </head>
 
-<body>
+<body >
 
- 	<?php $db = mysqli_connect('localhost','root','','shop')
+ 	<?php $db = mysqli_connect('localhost','root','','biddingdb')
 		or die('Error connecting to MySQL server.'); 
 
 		$query1 = "SELECT * FROM category ";
@@ -430,7 +430,7 @@
 
             <!-- *** ADVANTAGES HOMEPAGE ***
  _________________________________________________________ -->
-            <div id="advantages">
+            <div id="about">
 
                 <div class="container">
                     <div class="same-height-row">
@@ -552,9 +552,9 @@
                                 <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
                                 <h4>Parveen Anand</h4>
                                 <p class="text-muted">Lead Designer</p>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/fidelis52486518"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://mobile.facebook.com/fidelis.waweru.9"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/fidelis-waweru-97645b166"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -562,9 +562,9 @@
                                 <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
                                 <h4>Diana Petersen</h4>
                                 <p class="text-muted">Lead Marketer</p>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/fidelis52486518"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://mobile.facebook.com/fidelis.waweru.9"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/fidelis-waweru-97645b166"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -572,9 +572,9 @@
                                 <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
                                 <h4>Larry Parker</h4>
                                 <p class="text-muted">Lead Developer</p>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/fidelis52486518"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://mobile.facebook.com/fidelis.waweru.9"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/fidelis-waweru-97645b166"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
@@ -599,7 +599,7 @@
             </div>
         </section>
                 <!-- News -->
-                <div class="box text-center" data-animate="fadeInUp">
+                <div class="box text-center" id="news" data-animate="fadeInUp">
                 <div id="advantages">
                   <div class="container">
                     <div class="same-height-row">
@@ -653,7 +653,7 @@
                         <h3 class="text-uppercase">CONTACT US</h3>
 
                         <div>
-                        <?php include 'php-contact-form/index.php'; ?>
+                        <?php include 'contact/index.php'; ?>
                     </div>
                         </p>
                     </div>

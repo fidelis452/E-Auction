@@ -12,7 +12,7 @@ if (!isset($_SESSION['loginid']) || !isset($_SESSION['username']))
         $u = strip_tags($_POST['username']);
         $p = md5(strip_tags($_POST['password']));
         //Now let us look for the user in the database.
-        $db = mysqli_connect('localhost','root','','shop')
+        $db = mysqli_connect('localhost','root','','biddingdb')
                 or die('Error connecting to MySQL server.'); 
         $query = "SELECT UserID FROM user WHERE Username = '$u' AND Password = '$p' LIMIT 1";
         $result = mysqli_query($db, $query);

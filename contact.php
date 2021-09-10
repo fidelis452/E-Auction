@@ -34,23 +34,21 @@
 
     <link rel="shortcut icon" href="favicon.png">
 
-
-
 </head>
 
-<body>
+<body style="background-image: url('./img/bg.jpg')">
     
-   <?php $db = mysqli_connect('localhost','root','','shop')
-            or die('Error connecting to MySQL server.'); 
+   <?php $db = mysqli_connect('localhost', 'root', '', 'biddingdb')
+    or die('Error connecting to MySQL server.');
 
-            $query1 = "SELECT * FROM category ";
-            $result1 = mysqli_query($db, $query1);
-            $categories = mysqli_fetch_array($result1);
+$query1 = "SELECT * FROM category ";
+$result1 = mysqli_query($db, $query1);
+$categories = mysqli_fetch_array($result1);
 
 
-             include 'header.php';
-             
-             ?>
+include 'header.php';
+
+?>
 
     <!-- *** NAVBAR END *** -->
 
@@ -58,10 +56,9 @@
 
         <div id="content">
             <div class="container">
-                <div class="col-md-3">
                     <!-- *** PAGES MENU ***
  _________________________________________________________ -->
-                    <div class="panel panel-default sidebar-menu">
+                    <!-- <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
                             <h3 class="panel-title">Quick Links</h3>
@@ -82,19 +79,19 @@
                             </ul>
 
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- *** PAGES MENU END *** -->
 
 
-                    <div class="banner">
+                    <!-- <div class="banner">
                         <a href="#">
                             <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
                         </a>
-                    </div>
+                    </div> -->
                 </div>
 
-                <div class="col-md-9">
+                <div class="col-md-12">
 
 
                     <div class="box" id="contact">
@@ -129,14 +126,13 @@
                         <div id="map">
 
                         </div>
-                        <div class="box text-center" data-animate="fadeInUp">
+            <div class="box text-center" data-animate="fadeInUp">
                 <div class="container">
                     <div class="col-md-9">
                         <h3 class="text-uppercase">CONTACT US</h3>
 
-                        <div>
-                        <?php include 'php-contact-form/index.php'; ?>
-                    </div>
+                        <?php include 'contact/index.php'; ?>
+                    <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -149,7 +145,7 @@
         </div>
         <!-- /#content -->
 
-  <?php include 'footer.php';?>
+  <?php include 'footer.php'; ?>
 
 
     </div>
@@ -173,28 +169,24 @@
 
 
     <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script> -->
-         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS7DIHKGOodQ_RgzNRIKS8ea_aS0KakxE"></script>
+         <!-- <script async difer
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS7DIHKGOodQ_RgzNRIKS8ea_aS0KakxE&callback=initMap">
+        </script> -->
+        <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHq-4yxfIXXyeHbmPykhebuJsMdu9YuwI&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
     
 
     <script>
-        function initialize() {
-            var mapOptions = {
-                zoom: 15,
-                center: new google.maps.LatLng(-0.319144,37.6550383),
-                mapTypeId: google.maps.MapTypeId.ROAD,
-                scrollwheel: false
-            }
-            var map = new google.maps.Map(document.getElementById('map'),
-                mapOptions);
+        let map;
 
-            var myLatLng = new google.maps.LatLng(-0.319144,37.6550383);
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -0.319144, lng: 37.6550383 },
+    zoom: 8,
+  });
+}
     </script>
 
 

@@ -3,8 +3,7 @@ if ($.cookie("theme_csspath")) {
 }
 
 $(function() {
-
-    animations();
+	animations();
     productDetailGallery(4000);
     carousels();
     utils();

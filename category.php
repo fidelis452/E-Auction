@@ -8,10 +8,12 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obaju e-commerce template">
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
 
     <title>
-        E-auction
+        E-Auction
     </title>
 
     <meta name="keywords" content="">
@@ -175,10 +177,10 @@
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.php?ItemNo=<?php echo $list['ItemID'] ?>"><?php echo $list['ItemName'] ?></a></h3>
-                                    <p class="price">Rs : <?php echo number_format($list['CurrentPrice'],2);?></p>
+                                    <p class="price">Ksh : <?php echo number_format($list['CurrentPrice'],2);?></p>
                                     <p class="buttons">
                                         <a href="detail.php?ItemNo=<?php echo $list['ItemID'] ?>" class="btn btn-default">View detail</a>
-                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                                        <!-- <a href="detail.php?ItemNo" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Buy Now</a> -->
                                     </p>
                                 </div>
                                 <!-- /.text -->
